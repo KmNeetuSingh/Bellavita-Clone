@@ -1,7 +1,3 @@
-Sure! Here's a README file for the **BellaVita** project, based on the structure and style of the AuraHaus README. Let me know if you'd like to tweak anything!  
-
----
-
 # **BellaVita** ✨🌿  
 Your ultimate destination for natural beauty, skincare, and wellness products! BellaVita brings you the best of organic living with a seamless shopping experience, secure transactions, and a vibrant community.  
 
