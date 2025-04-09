@@ -29,10 +29,10 @@ const CartPage = () => {
     dispatch(getCartItems);
   }, [dispatch]);
 
-  const subtotal = allProducts.reduce((acc, item) => {
-    const price = parseFloat(item.price) || 0;
-    return acc + price;
-  }, 0);
+  const subtotal = allProducts.reduce(
+    (acc, item) => acc + (parseFloat(item?.price) || 0),
+    0
+  );
 
   const estimatedTax = subtotal * 0.08;
   const estimatedTotal = subtotal + estimatedTax;
@@ -53,7 +53,6 @@ const CartPage = () => {
           );
         })
       );
-
       window.location.reload();
     } catch (error) {
       console.log(error.message);
@@ -88,8 +87,9 @@ const CartPage = () => {
             {loading ? (
               <Flex justifyContent="center" alignItems="center" minH="50vh">
                 <Img
-                  src="https://www.sephora.com/img/ufe/loader.gif"
-                  alt={<Spinner />}
+                  src="https://i.gifer.com/ZZ5H.gif"
+                  alt="Loading"
+                  w="80px"
                 />
               </Flex>
             ) : data && data.length > 0 ? (
@@ -104,7 +104,6 @@ const CartPage = () => {
             ) : (
               <Box mt={5}>
                 <Divider mb={10} bg={"grey"} h={0.8} />
-
                 <Text fontSize={"18px"} fontWeight={400} mb={3}>
                   Your shopping cart is empty. Please add at least one item to
                   your cart before checking out.
@@ -134,9 +133,9 @@ const CartPage = () => {
                   />
                 </Box>
                 <Text fontSize={"16px"}>
-                  The Sephora Credit Card Program
+                  The BellaVita Credit Card Program
                   <Text fontWeight={400} fontSize={"11px"}>
-                    Save 25% on this order when you open and use either Sephora
+                    Save 25% on this order when you open and use the BellaVita
                     Credit Card today
                   </Text>
                 </Text>
@@ -155,11 +154,11 @@ const CartPage = () => {
             <Box p={4} fontWeight={400} border={"1px solid rgba(0,0,0,0.3)"}>
               <Flex mb={4} justifyContent={"space-between"}>
                 <Text>Subtotal</Text>
-                <Text>${subtotal}</Text>
+                <Text>${subtotal.toFixed(2)}</Text>
               </Flex>
               <Flex mb={3} fontSize={"14px"} justifyContent={"space-between"}>
                 <Text>Estimated Tax</Text>
-                <Text>${estimatedTax}</Text>
+                <Text>${estimatedTax.toFixed(2)}</Text>
               </Flex>
               <Divider mb={3} bg={"grey"} />
               <Flex
@@ -169,7 +168,7 @@ const CartPage = () => {
                 fontWeight={700}
               >
                 <Text>Estimated Total</Text>
-                <Text>${estimatedTotal}</Text>
+                <Text>${estimatedTotal.toFixed(2)}</Text>
               </Flex>
               <Text mb={2} fontSize={"14px"} color={"rgb(112,112,112)"}>
                 Applicable taxes will be calculated at checkout.
