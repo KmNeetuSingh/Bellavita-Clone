@@ -128,7 +128,7 @@ const CartPage = () => {
               <Flex gap={"10px"} alignItems={"start"} mb={"12px"}>
                 <Box w={"30px"}>
                   <Img
-                    src="https://www.sephora.com/img/ufe/icons/cc-outline.svg"
+                    src="https://www.bellavita.com/img/ufe/icons/cc-outline.svg"
                     w={"100%"}
                   />
                 </Box>
